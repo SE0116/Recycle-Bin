@@ -18,7 +18,7 @@ print(odd)
 
 
 
-# Workship
+# Workshop
 
 ## 1 약수
 
