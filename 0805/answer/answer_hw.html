@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <title>WebHW</title>
+</head>
+<body>
+  <!-- # 1 -->
+  <div class="text-center">
+    <button type="button" class="btn btn-success btn-lg w-75">Sign in</button>
+  </div>
+  <div class="row justify-content-center">
+    <button type="button" class="btn btn-success btn-lg col-9">Sign in</button>
+  </div>
+
+  <!-- # 2 -->
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                프로젝트
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                그룹들
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">활동</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">마일스톤</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">스니펫</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- # 3 -->
+  <div>
+    <nav aria-label="...">
+      <ul class="pagination">
+
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+
+        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+
+        <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+
+        <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+
+        <li class="page-item"><a class="page-link text-dark" href="#">4</a></li>
+
+        <li class="page-item"><a class="page-link text-dark" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- # 4 -->
+
+  <div class="p-5">
+
+    <div class="alert alert-danger d-flex align-items-center bg-danger" role="alert">
+      <div class="text-white px-4">
+        Invalid Login or password
+      </div>
+    </div>
+    
+    <h1 class="fw-bold py-2">로그인 화면</h1>
+    <hr>
+
+    <div class="border">
+      <div>
+        <p class="text-center fw-bold mt-3">Sign in</p>
+        <hr class="bg-primary pt-1">
+      </div>
+      <form class="pb-4 px-4">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label fw-bold">Username or email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+  
+        <div class="d-flex justify-content-between">
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          </div>
+          <a href="#" class="text-decoration-none fw-bold">Forgot your password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Sign in</button>
+      </form>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
