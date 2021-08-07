@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <title>Document</title>
+
+  <style>
+    @media (min-width: 700px) {
+      h2 { color: red; }
+    }
+
+    @media (width: 600px) {
+      h2 { color: blue; }
+    }
+
+    @media (max-width: 500px) {
+      h2 { color: green; }
+    }                           
+
+    @media (orientation: landscape) {
+      p.orientation::after { content: '가로입니다.'; }
+    }
+
+    @media (orientation: portrait) {
+      p.orientation::after { content: '세로입니다.'; }
+    }
+
+    @media (min-width: 500px) {
+      .rainbow { color: red; }
+    }
+    @media (min-width: 550px) {
+      .rainbow { color: orangered; }
+    }
+    @media (min-width: 600px) {
+      .rainbow { color: yellow; }
+    }
+    @media (min-width: 650px) {
+      .rainbow { color: green; }
+    }
+    @media (min-width: 700px) {
+      .rainbow { color: blue; }
+    }
+    @media (min-width: 750px) {
+      .rainbow { color: navy; }
+    }
+    @media (min-width: 800px) {
+      .rainbow { color: purple; }
+    }
+
+    @media only print {
+      * { color: black; }
+    }
+
+  </style>
+
+</head>
+<body>
+  <h1>Media Query</h1>
+  <h2>가로가 700px보다 크면 RED, 600px 이면 BLUE, 500px보다 작으면 GREEN</h2>
+  <p class="orientation">지금 화면 방향은?</p>
+  <h3 class="rainbow">화면 가로 길이에 따라 색이 변하는 무지개</h3>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
