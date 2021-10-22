@@ -1,0 +1,12 @@
+<form action="">
+{% csrf_token %}
+<div class="login_container">
+  <img src="{% static 'img/logo_text.png' %}" alt="instagramText" class="instagramText">
+  <input name="email" type="text" class="userlogin" placeholder="휴대폰 번호 또는 이메일 주소" value="">
+  <input name="email" type="text" class="userlogin" placeholder="휴대폰 번호 또는 이메일 주소" value="">
+  <input id="loginButton" class="btn btn-primary" type="submit" value="로그인">
+</div>
+<footer class="joinInsta">
+  <p class="join">계정이 없으신가요? <a class="joinBtn" href="{% url 'signup' %}">가입하기</a></p>
+</footer>
+</form>

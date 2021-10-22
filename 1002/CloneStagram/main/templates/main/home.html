@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<ul>
+  <div class="border border-2 rounded-1 w-50 py-5">
+    <div class="d-flex flex-row">
+    {% for story in stories %}
+      <img src="{{ story.profile_img }}" alt="story.profile_img">
+      <br>
+      <p>{{ story.profile_name }}</p>
+    {% endfor %}
+    </div>
+  </div>
+</ul>
+<br>
+<ul>
+  {% for feed in feeds %}
+    <div class="main border border-2 rounded-1 w-50">
+      <section class="cardViewSection">
+        <header>
+            <div class="userNickName py-4">
+              <img class="mx-3"width="30" src="{% static 'images/basic_profile.png' %}" alt="basic_profile" class="feedImg">
+              user nickname
+            </div>
+        </header>
+        <div class="cardImage">
+          <img width="628px" src="{{ feed.image.url }}" alt="feed.image">
+        </div>
+
+        <div class="cardInfo">
+          <div class="infoLeft">
+            <img src="{% static 'images/alarm.jpg' %}" alt="like" class="feedImg">
+            <img src="{% static 'images/detail.jpg' %}" alt="detail" class="feedImg">
+            <img src="{% static 'images/send.jpg' %}" alt="share" class="feedImg">
+          </div>
+        </div>
+        <div class="comment fw-bold">
+          <p>좋아요 {{ feed.likes }}개</p>
+          {{ feed.summary }}
+          {{ feed.pub_date }}
+          <br>
+        </div>
+        <div class="comment_form">
+          <form action="">
+            <img src="{% static 'images/emoji.jpg' %}" alt="emoji" class="feedImg">
+            <input type="text" placeholder="댓글 입력...">
+          </form>
+        </div>
+      </section>
+    </div>
+    <br>
+  {% endfor %}
+</ul>
+{% endblock %}

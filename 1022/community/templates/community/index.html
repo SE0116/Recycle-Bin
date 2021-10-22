@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Index</h1>
+<hr>
+<div class="container">
+  <div class="row">
+    {% for review in reviews %}
+      {% comment %} <h3><a href="{% url 'accounts:profile' review.user.username %}">{{ review.user.username }}</a> : <a href="{% url 'community:detail' review.pk %}">{{ review.title }}</a></h3> {% endcomment %}
+      <div class="col-4">
+        <a href="{% url 'community:detail' review.pk %}" class="text-decoration-none">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ review.title }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ review.movie_title }}</h6>
+              <p class="card-text fw-bold">{{ review.content }}</p>
+              <p class="text-warning">{{ review.get_rank_display }}</p>
+            </div>
+          </div>
+        </a>
+        <p>작성자 : <a href="{% url 'accounts:profile' review.user.username %}" class="card-link text-decoration-none">{{ review.user.username }}</a></p>
+      </div>
+    {% empty %}
+      <h3>no review..</h3>
+      <hr>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

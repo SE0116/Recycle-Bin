@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="icon" href="{% static 'images/instagram.png' %}">
+  <title>Clonestagram</title>
+</head>
+<body>
+  <br><br><br><br>
+  <div class="container">
+  {% block content %}
+  <form action="{% url 'logged:login' %}" method="POST">
+  {% csrf_token %}
+  <div class="login_contatiner border offset-7 col-3 justify-content-center">
+    <br>
+    <div class="d-flex flex-column justify-content-center">
+      <img width="200" src="{% static 'images/Instagram_logo.png' %}" alt="logo"></a>
+      <div>
+        <div class="d-flex flex-column justify-content-center">
+          <input name="username" type="text" class="userLogin offset-1 col-10" placeholder="전화번호, 사용자 이름 또는 이메일" value="">
+          <br>
+          <input name="1st_pwd" type="password" class="userLogin offset-1 col-10" placeholder="비밀번호" value="">
+          <br>
+          <input id="loginButton" class="btn btn-primary offset-1 col-10" type="submit" value="로그인">
+        </div>    
+      </div>
+    </div>
+    <hr class="line">
+    
+    <hr>
+    <a class="d-flex flex-column jusfity-content-center offset-1 col-10" href="https://www.facebook.com">
+      <button type="button" class="btn btn-primary">
+        <img class="mx-2 bg-white" width="25" src="{% static 'images/facebook_logo.png' %}" alt="log_with_fb">Facebook으로 로그인
+      </button>
+    </a>
+  </div>
+  <br>
+  <footer class="joinInsta border d-flex flex-row justify-content-center align-items-center offset-7 col-3">
+    <p class="join">계정이 없으신가요?<a class="joinBtn" href="{% url 'logged:signup' %}">가입하기</a></p>
+  </footer>
+  <div class="d-flex flex-column justify-content-center align-items-center offset-7 col-3">
+    <p class="my-3">앱을 다운로드 하세요.</p>
+    <div>
+      <a class="text-decoration-none" href="https://apps.apple.com/us/app/instagram/id389801252">
+        <img width="150" src="{% static 'images/apple_download.png' %}" alt="apple_download">
+      </a>
+      <a class="text-decoration-none" href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=ko&gl=US">
+        <img width="150" src="{% static 'images/google_download.png' %}" alt="google_download">
+      </a>
+    </div>
+  </div>
+  </form>
+  {% endblock %}
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

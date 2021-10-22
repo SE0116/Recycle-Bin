@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<ul>
+  {% for feed in feeds %}
+    <div class="main">
+      <section class="cardViewSection">
+        <header>
+          <div class="userNickName">user nickname</div>
+        </header>
+        <div class="cardImage">
+          <img src="{{ feed.image.url }}" alt="feed.image.url">
+        </div>
+
+        <div class="cardInfo">
+          <div class="infoLeft">
+            <img src="{% static 'images/alarm.jpg' %}" alt="like" class="feedImg">
+            <img src="{% static 'images/detail.jpg' %}" alt="detail" class="feedImg">
+            <img src="{% static 'images/send.jpg' %}" alt="share" class="feedImg">
+          </div>
+        </div>
+        <div class="comment">
+          {{ feed.summary }}
+          {{ feed.pub_date }} <br>
+        </div>
+        <div class="comment_form">
+          <form action="">
+            <img src="images/emoji.jpg" alt="emoji">
+            <input type="text" placeholder="댓글 입력...">
+          </form>
+        </div>
+      </section>
+    </div>
+  {% endfor %}
+</ul>
+{% endblock %}

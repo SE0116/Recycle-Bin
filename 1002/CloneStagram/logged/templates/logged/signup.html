@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="icon" href="{% static 'images/instagram.png' %}">
+  <title>Clonestagram</title>
+</head>
+<body>
+  <br><br><br><br>
+  <div class="container">
+  {% block content %}
+  <form action="{% url 'logged:signup' %}" method="POST">
+  {% csrf_token %}
+  <div class="login_contatiner border offset-4 col-3 justify-content-center">
+    <br>
+    <div class="d-flex justify-content-center">
+      <img width="200" src="{% static 'images/Instagram_logo.png' %}" alt="logo"></a>      
+    </div>
+    <div class="justify-content-center">
+      <h2 class="joinLetter fw-bold fs-5 text-black-50">친구들의 사진과 동영상을 보려면 가입하세요.</h2>
+    </div>  
+    <a class="d-flex flex-column jusfity-content-center offset-1 col-10" href="https://www.facebook.com">
+      <button type="button" class="btn btn-primary">
+        <img class="mx-2 bg-white" width="25" src="{% static 'images/facebook_logo.png' %}" alt="log_with_fb">Facebook으로 로그인
+      </button>
+    </a>
+    <hr class="line">
+    <div class="d-flex flex-column justify-content-center">
+      <input name="email" type="text" class="userLogin offset-1 col-10" placeholder="휴대폰 번호 또는 이메일 주소" value="">
+      <br>
+      <input name="name" type="text" class="userLogin offset-1 col-10" placeholder="성명" value="">
+      <br>
+      <input name="username" type="text" class="userLogin offset-1 col-10" placeholder="사용자 이름" value="">
+      <br>
+      <input name="1st_pwd" type="password" class="userLogin offset-1 col-10" placeholder="비밀번호" value="">
+      <br>
+      <input name="2nd_pwd" type="password" class="userLogin offset-1 col-10" placeholder="비밀번호 확인" value="">
+      <br>
+      <input id="loginButton" class="btn btn-primary offset-1 col-10" type="submit" value="가입하기">
+    </div>
+  </div>
+  <br>
+  <footer class="joinInsta border d-flex flex-row justify-content-center align-items-center offset-4 col-3">
+    <p class="join">계정이 있으신가요?<a class="joinBtn" href="{% url 'logged:login' %}">로그인</a></p>
+  </footer>
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <p class="my-3">앱을 다운로드 하세요.</p>
+    <div>
+      <a href="https://apps.apple.com/us/app/instagram/id389801252">
+        <img width="100" src="{% static 'images/apple_download.png' %}" alt="apple_download">
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=ko&gl=US">
+        <img width="100" src="{% static 'images/google_download.png' %}" alt="google_download">
+      </a>
+    </div>
+  </div>
+  </form>
+  {% endblock %}
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

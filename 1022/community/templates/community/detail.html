@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Detail</h1>
+<hr>
+<p>제목 : {{ review.title }}</p>
+<p>내용 : {{ review.content }}</p>
+<p>작성시간 : {{ review.created_at }}</p>
+<a href="{% url 'community:index' %}">[back]</a>
+<hr>
+<form action="{% url 'community:like' review.pk %}" method='POST'>
+  {% csrf_token %}
+  <span>{{ review.like_users.all|length }}</span>
+  {% if user in review.like_users.all %}
+    <button><i class="fas fa-heart" style='color: red'></i>  {{review.like_users.all|length}}</button>
+    {% else %}
+    <button><i class="fas fa-heart"></i>  {{review.like_users.all|length}}</button>
+  {% endif %}
+</form>
+<h3>댓글</h3>
+{% if comments %}
+  <p>{{ comments|length }}개의 댓글이 있습니다.</p>
+{% endif %}
+<ul>
+  {% for comment in comments %}
+    <li>{{ comment.user }}: {{ comment.content }}</li>
+  {% endfor %}
+</ul>
+<hr>
+{% if request.user.is_authenticated %}
+  <form action="{% url 'community:comment_create' review.pk %}" method="POST">
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="submit">
+  </form>
+{% else %}
+  <a href="{% url 'accounts:login' %}">login</a>
+{% endif %}
+{% endblock %}
